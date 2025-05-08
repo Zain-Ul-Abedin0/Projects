@@ -1,5 +1,6 @@
 import os
 import streamlit as st
+import Api_key from key
 import time
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -10,7 +11,7 @@ from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCAmEtMlrBxO05A-JvWSuXiM6RccChWwiQ"
+os.environ["GOOGLE_API_KEY"] = Api_key
 
 # Initialize LLM
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.6, max_tokens=500)
